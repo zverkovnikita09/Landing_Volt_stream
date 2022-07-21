@@ -1,19 +1,54 @@
-const list = document.querySelector('.certificate__slider');
-const prevCertif = document.querySelector('#prevCertif');
-const nextCertif = document.querySelector('#nextCertif');
-const certifWrapper = document.querySelector('.certificate__list');
+const cert = document.querySelector('.certificate__slider');
+const feed = document.querySelector('.feedback__slider');
+const work = document.querySelector('.work__slider');
+const prevArrow = document.querySelectorAll('.prevArrow');
+const nextArrow = document.querySelectorAll('.nextArrow');
 
-nextCertif.onclick =()=>{
-    list.scrollBy(300, 0)
+const Slide = (elem, offset) =>{
+    elem.scrollBy(offset, 0);
 }
-prevCertif.onclick = ()=>{
-    list.scrollBy(-300, 0)
-    console.log(list.scrollLeft)
+
+for(let prev of prevArrow){
+    switch(prev.id){
+        case 'prevFeed': prev.onclick = ()=>{
+            Slide(feed, -300);
+        }
+        break;
+
+        case 'prevCertif': prev.onclick = ()=>{
+            Slide(cert, -300);
+        }
+        break;
+
+        case 'prevWork': prev.onclick = ()=>{
+            Slide(work, -400);
+        }
+        break;
+    }
 }
+
+for(let next of nextArrow){
+    switch(next.id){
+        case 'nextFeed': next.onclick = ()=>{
+            Slide(feed, 300);
+        }
+        break;
+
+        case 'nextCertif': next.onclick = ()=>{
+            Slide(cert, 300);
+        }
+        break;
+
+        case 'nextWork': next.onclick = ()=>{
+            Slide(work, 400);
+        }
+        break;
+    }
+}
+
 
 //switch_steps
 const steps = Array.from(document.querySelectorAll('.stepItem'));
-console.log(steps)
 let i = 0;
 const switch_steps = ()=>{
     if(i==steps.length-1){
