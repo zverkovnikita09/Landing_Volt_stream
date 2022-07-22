@@ -79,6 +79,19 @@ strong{
 .button:hover{
     background-color: #C9000C;
 }
+.modal__overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgba(48, 48, 48, 0.8);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 /*Header*/

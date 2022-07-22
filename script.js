@@ -23,7 +23,7 @@ for(let prev of prevArrow){
         break;
 
         case 'prevWork': prev.onclick = ()=>{
-            window_width>1280 ? Slide(work, -300) : Slide(work, -195);
+            window_width>1280 ? Slide(work, -400) : Slide(work, -195);
         }
         break;
     }
@@ -42,7 +42,7 @@ for(let next of nextArrow){
         break;
 
         case 'nextWork': next.onclick = ()=>{
-            window_width>1280 ? Slide(work, 300) : Slide(work, 195);
+            window_width>1280 ? Slide(work, 400) : Slide(work, 195);
         }
         break;
     }
@@ -66,12 +66,23 @@ const switch_steps = ()=>{
 }
 setInterval(switch_steps, 3000);
 
-
+const modal = document.querySelector('.modal__overlay');
+const mImage = document.querySelector('.modal__image');
 const slides = document.querySelectorAll('.slide_list');
+const body = document.querySelector('body');
+
+modal.onclick = () =>{
+    modal.style.display = 'none';
+    body.style.overflow = 'auto';
+}
+mImage.onclick= e => e.stopPropagation();
+
 for (let slide of slides){
     slide.addEventListener('click', e=>{
         if(e.target.src){
-            console.log(e.target);
+            modal.style.display = 'flex';
+            mImage.src = e.target.src;
+            body.style.overflow = 'hidden';
         }
     })
 }
