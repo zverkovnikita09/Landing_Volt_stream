@@ -29,6 +29,7 @@
     font-family: 'Gilroy';
     line-height: 160%;
     font-size: 18px;
+    -webkit-tap-highlight-color: transparent;
 }
 li{
     list-style: none;
@@ -231,13 +232,13 @@ strong{
     gap: 40px;
     margin-top: 40px;
 }
-[class*="_list"] li{
+[class*="__list"] li{
     cursor: pointer;
 }
-[class*="_list"] li:first-child{
+[class*="__list"] li:first-child{
     padding-left: calc((100% - var(--container-width))/2);
 }
-[class*="_list"] li:last-child{
+[class*="__list"] li:last-child{
     padding-right: calc((100% - var(--container-width))/2);
 }
 
