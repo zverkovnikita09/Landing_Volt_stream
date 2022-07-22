@@ -7,21 +7,23 @@ const nextArrow = document.querySelectorAll('.nextArrow');
 const Slide = (elem, offset) =>{
     elem.scrollBy(offset, 0);
 }
+let window_width = window.innerWidth;
+window.onresize =()=> window_width = window.innerWidth;
 
 for(let prev of prevArrow){
     switch(prev.id){
         case 'prevFeed': prev.onclick = ()=>{
-            Slide(feed, -300);
+            window_width>1280 ? Slide(feed, -300) : Slide(feed, -195);
         }
         break;
 
         case 'prevCertif': prev.onclick = ()=>{
-            Slide(cert, -300);
+            window_width>1280 ? Slide(cert, -300) : Slide(cert, -195);
         }
         break;
 
         case 'prevWork': prev.onclick = ()=>{
-            Slide(work, -400);
+            window_width>1280 ? Slide(work, -300) : Slide(work, -195);
         }
         break;
     }
@@ -30,17 +32,17 @@ for(let prev of prevArrow){
 for(let next of nextArrow){
     switch(next.id){
         case 'nextFeed': next.onclick = ()=>{
-            Slide(feed, 300);
+            window_width>1280 ? Slide(feed, 300) : Slide(feed, 195);
         }
         break;
 
         case 'nextCertif': next.onclick = ()=>{
-            Slide(cert, 300);
+            window_width>1280 ? Slide(cert, 300) : Slide(cert, 195);
         }
         break;
 
         case 'nextWork': next.onclick = ()=>{
-            Slide(work, 400);
+            window_width>1280 ? Slide(work, 300) : Slide(work, 195);
         }
         break;
     }
@@ -63,3 +65,13 @@ const switch_steps = ()=>{
     }
 }
 setInterval(switch_steps, 3000);
+
+
+const slides = document.querySelectorAll('.slide_list');
+for (let slide of slides){
+    slide.addEventListener('click', e=>{
+        if(e.target.src){
+            console.log(e.target);
+        }
+    })
+}
