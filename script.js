@@ -86,3 +86,21 @@ for (let slide of slides){
         }
     })
 }
+
+
+//accordion
+document.querySelectorAll('.acc_item__trigger').forEach((elem)=>{
+    elem.addEventListener('click', ()=>{
+        const parent = elem.parentNode;
+
+        if(parent.classList.contains('active')){
+            parent.classList.remove('active');
+        }
+        else{
+            document.querySelectorAll('.acc_item').forEach((item)=>{
+                item.classList.remove('active');
+            })
+            parent.classList.add('active');
+        }
+    })
+})
