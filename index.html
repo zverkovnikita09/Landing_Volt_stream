@@ -20,17 +20,27 @@
                 <nav class="header__nav">
                     <img src="./img/logo.svg" alt="Логотип" class="header__logo">
                     <ul class="header__navlinks">
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#steps">Этапы</a></li>
-                        <li><a href="#feedback">Отзывы</a></li>
-                        <li><a href="#work">Наши работы</a></li>
-                        <li><a href="#questions">Вопрос ответ</a></li>
+                        <li><a href="#about" class="navlink">О нас</a></li>
+                        <li><a href="#steps" class="navlink">Этапы</a></li>
+                        <li><a href="#feedback" class="navlink">Отзывы</a></li>
+                        <li><a href="#work" class="navlink">Наши работы</a></li>
+                        <li><a href="#questions" class="navlink">Вопрос ответ</a></li>
                     </ul>
                 </nav>
                 <div class="header__connection">
-                    <a href="tel:123456789" class="header__phone"><img src="./img/phone.svg" alt="">+7 800 555 44 80</a>
-                    <a href="#connection">Заказать обратный звонок</a>
+                    <a href="tel:123456789" class="header__phone"><img src="./img/phone.svg" class="phone" alt="Телефон">+7 800 555 44 80</a>
+                    <a href="#connection" class="callback">Заказать обратный звонок</a>
                 </div>
+                <div class="header__burger">
+                    <div class="header__burger_btn"></div>
+                </div>
+                <ul class="burger__menu">
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#steps">Этапы</a></li>
+                    <li><a href="#feedback">Отзывы</a></li>
+                    <li><a href="#work">Наши работы</a></li>
+                    <li><a href="#questions">Вопрос ответ</a></li>
+                </ul>
             </div>
         </header>    
 
@@ -109,7 +119,7 @@
                 <div class="certificate__top">
                     <h2>Комплектующие для систем заземления и молниезащиты сертефицированны в независимых лабораториях</h2>
                     <div class="arrows">
-                        <img src="./img/arrow.svg" alt="" class="prevArrow" style="transform: scale(-1);" id="prevCertif">
+                        <img src="./img/arrow.svg" alt="" class="prevArrow" id="prevCertif">
                         <img src="./img/arrow.svg" alt="" class="nextArrow" id="nextCertif">
                     </div>
                 </div>
@@ -192,7 +202,7 @@
                 <div class="feedback__top">
                     <h2>Отзывы о работе с нами</h2>
                     <div class="arrows">
-                        <img src="./img/arrow.svg" alt="" style="transform: scale(-1);" class="prevArrow" id="prevFeed">
+                        <img src="./img/arrow.svg" alt="" class="prevArrow" id="prevFeed">
                         <img src="./img/arrow.svg" alt="" class="nextArrow" id="nextFeed">
                     </div>
                 </div>
@@ -264,7 +274,7 @@
                 <div class="work__top">
                     <h2>Фото готовых работ</h2>
                     <div class="arrows">
-                        <img src="./img/arrow.svg" alt="" style="transform: scale(-1);" class="prevArrow" id="prevWork">
+                        <img src="./img/arrow.svg" alt="" class="prevArrow" id="prevWork">
                         <img src="./img/arrow.svg" alt="" class="nextArrow" id="nextWork">
                     </div>
                 </div>
@@ -394,6 +404,8 @@
             </div>
         </footer>
     </div>
+    <script src="./interObs.js"></script>
+    <script src="./scroll.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
