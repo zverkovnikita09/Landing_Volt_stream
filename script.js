@@ -87,13 +87,25 @@ document.querySelectorAll('.acc_item__trigger').forEach((elem)=>{
 
 //burger
 const burger = document.querySelector('.header__burger');
+const menu = document.querySelector('.burger__menu');
 let isOpen = false;
 burger.onclick = ()=>{
     if(!isOpen){
-        burger.classList.add('open')
+        burger.classList.add('open');
+        body.style.overflow = 'hidden';
+        menu.classList.add('active');
     }
     else{
         burger.classList.remove('open')
+        body.style.overflow = 'auto'
+        menu.classList.remove('active');
     }
     isOpen = !isOpen;
 }
+document.querySelectorAll('.burger_link').forEach((link)=>{
+    link.addEventListener('click', ()=>{
+        burger.classList.remove('open')
+        body.style.overflow = 'auto'
+        menu.classList.remove('active');
+    })
+})

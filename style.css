@@ -41,10 +41,9 @@ a{
     color: inherit;
 }
 .wrapper{
-    background: linear-gradient(80.5deg, #83A4BD 11.55%, #A5A2B3 24.51%, #BA929B 33.33%,
+    background: linear-gradient(89deg, #83A4BD 11.55%, #A5A2B3 24.51%, #BA929B 33.33%,
     #BD8689 39.89%, #C46F6A 47.85%, #C65857 55.62%, #BF4145 65.14%, #9C2E37 75.49%,
     #7A262E 84.66%, #5B1E23 95.55%, #421F23 103.99%, #2D1C22 111.11%);
-    background-size: contain;
 }
 body{
     min-height: 100vh;
@@ -150,14 +149,19 @@ strong{
     }
 }
 
-
 /*Header*/
 .header{
     overflow-x: hidden;
-    position: relative;
+    top: 0;
+    z-index: 2;
+    transition: 0.6s;
+}
+.header.hide{
+    transform: translateY(-100%);
+    transition: 1s;
 }
 .header__container{
-    padding-top: 30px;
+    padding: 30px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -180,7 +184,7 @@ strong{
     opacity: 0.1;
     width: 100%;
     transform: scaleX(0);
-    transition: .3s;
+    transition: 0.3s;
 }
 .navlink:hover::after{
     transform: scaleX(1);
@@ -279,7 +283,7 @@ strong{
     transform: rotate(-45deg) translate(7px, 7px);
     background-color: #F2323D;
 }
-.header__burger.open~.burger__menu{
+.burger__menu.active{
     transform: translateX(0);
 }
 .header__phone{
@@ -314,7 +318,7 @@ strong{
 
 /* 1 section */
 .main_section{
-    margin-top: 60px;
+    margin-top: 30px;
     position: relative;
     margin-left: calc((100% - var(--container-width))/2);
     overflow: hidden;
@@ -670,9 +674,6 @@ strong{
         gap: 30px;
         font-size: 14px;
     }
-    .main_section{
-        background-position: right 90px bottom -30px;
-    }
     .main_section h1{
         font-size: 24px;
     }
@@ -816,12 +817,19 @@ strong{
         --container-width: 550px;
         --main-padding: 40px;
     }
+    html{
+        scroll-behavior: auto;
+    }
     h2{
         text-align: center;
         font-size: 22px;
     }
     .header__burger{
         display: flex;
+    }
+    .header{
+        position: sticky;
+        backdrop-filter: blur(10px);
     }
     .button:hover::before{
         transform: translate(400px);
