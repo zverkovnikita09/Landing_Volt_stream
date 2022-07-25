@@ -242,10 +242,10 @@ strong{
 .header__burger{
     box-sizing: content-box;
     position: relative;
-    width: 18px;
+    width: 50px;
     cursor: pointer;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     transition: 0.3s ease-in-out;
     display: none;
     z-index: 10;
@@ -830,6 +830,9 @@ strong{
     .header{
         position: sticky;
         backdrop-filter: blur(10px);
+    }
+    .header__container{
+        padding: 20px 0;
     }
     .button:hover::before{
         transform: translate(400px);
