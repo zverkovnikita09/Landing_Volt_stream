@@ -85,6 +85,29 @@ document.querySelectorAll('.acc_item__trigger').forEach((elem)=>{
     })
 })
 
+//header
+const header = document.querySelector('.header');
+const defaultOffset = 80;
+let prevScroll = 0;
+
+const scrollPos = () => window.pageYOffset || document.documentElement.scrollTop;
+const isHide = ()=> header.classList.contains('hide');
+
+window.addEventListener('scroll', ()=>{
+    if(window.innerWidth<=800){
+        if(scrollPos()>defaultOffset){
+            if(scrollPos() > prevScroll && !isHide()){
+                header.classList.add('hide')
+            }
+            else if (scrollPos() < prevScroll && isHide()){
+                header.classList.remove('hide')
+            }
+            prevScroll = scrollPos();
+            console.log(prevScroll);
+        }
+    }
+})
+
 //burger
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.burger__menu');
@@ -102,10 +125,12 @@ burger.onclick = ()=>{
     }
     isOpen = !isOpen;
 }
+
 document.querySelectorAll('.burger_link').forEach((link)=>{
     link.addEventListener('click', ()=>{
         burger.classList.remove('open')
         body.style.overflow = 'auto'
         menu.classList.remove('active');
+        prevScroll = -Infinity;
     })
 })
