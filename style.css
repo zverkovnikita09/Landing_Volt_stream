@@ -251,7 +251,7 @@ strong{
     z-index: 10;
 }
 .header__burger_btn{
-    width: 18px;
+    width: 25px;
     height: 2px;
     background-color: #F2F2F2;
     transition: 0.3s ease-in-out;
@@ -260,16 +260,16 @@ strong{
 .header__burger_btn::after{
     content: '';
     position: absolute;
-    width: 18px;
+    width: 25px;
     height: 2px;
     background-color: #F2F2F2;
     transition: 0.3s ease-in-out;
 }
 .header__burger_btn::before{
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 }
 .header__burger_btn::after{
-    transform: translateY(6px);
+    transform: translateY(8px);
 }
 .header__burger.open .header__burger_btn{
     transform: translate(-10px);
@@ -297,16 +297,16 @@ strong{
 }
 @keyframes call {
     15% {
-    transform: translateX(3px) rotate(15deg);
+    transform: translateX(3px) rotate(12deg);
     }
     30% {
-    transform: translateX(-3px) rotate(-15deg);
+    transform: translateX(-3px) rotate(-12deg);
     }
     40% {
-    transform: translateX(2px) rotate(10deg);
+    transform: translateX(2px) rotate(8deg);
     }
     50% {
-    transform: translateX(-2px) rotate(-10deg);
+    transform: translateX(-2px) rotate(-8deg);
     }
     65% {
     transform: translateX(1px) rotate(5deg);

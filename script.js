@@ -87,7 +87,7 @@ document.querySelectorAll('.acc_item__trigger').forEach((elem)=>{
 
 //header
 const header = document.querySelector('.header');
-const defaultOffset = 80;
+const defaultOffset = 100;
 let prevScroll = 0;
 
 const scrollPos = () => window.pageYOffset || document.documentElement.scrollTop;
@@ -103,7 +103,6 @@ window.addEventListener('scroll', ()=>{
                 header.classList.remove('hide')
             }
             prevScroll = scrollPos();
-            console.log(prevScroll);
         }
     }
 })
