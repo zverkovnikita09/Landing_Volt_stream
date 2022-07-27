@@ -61,9 +61,11 @@ mImage.onclick= e => e.stopPropagation();
 for (let slide of slides){
     slide.addEventListener('click', e=>{
         if(e.target.src){
-            modal.style.display = 'flex';
             mImage.src = e.target.src;
             body.style.overflow = 'hidden';
+            setTimeout(()=>{
+                modal.style.display = 'flex';
+            }, 100)
         }
     })
 }
