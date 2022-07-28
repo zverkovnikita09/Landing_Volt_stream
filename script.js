@@ -89,14 +89,14 @@ document.querySelectorAll('.acc_item__trigger').forEach((elem)=>{
 
 //header
 const header = document.querySelector('.header');
-const defaultOffset = 100;
+const defaultOffset = 70;
 let prevScroll = 0;
 
 const scrollPos = () => window.pageYOffset || document.documentElement.scrollTop;
 const isHide = ()=> header.classList.contains('hide');
 
 window.addEventListener('scroll', ()=>{
-    if(window.innerWidth<=800){
+    if(window_width<=800){
         if(scrollPos()>defaultOffset){
             if(scrollPos() > prevScroll && !isHide()){
                 header.classList.add('hide')
@@ -110,7 +110,7 @@ window.addEventListener('scroll', ()=>{
 })
 
 window.addEventListener('resize', ()=>{
-    if(window_width>1280){
+    if(window_width>800){
         header.classList.remove('hide');
     }
 })
