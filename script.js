@@ -109,6 +109,12 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
+window.addEventListener('resize', ()=>{
+    if(window_width>1280){
+        header.classList.remove('hide');
+    }
+})
+
 //burger
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.burger__menu');

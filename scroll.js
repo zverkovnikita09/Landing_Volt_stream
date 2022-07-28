@@ -8,7 +8,7 @@ const appearance = new IntersectionObserver((entries, observer)=>{
         }
     })
 },{
-    threshold: 0.5
+    threshold: 0.25
 })
 
 sections.forEach((sect)=>appearance.observe(sect))

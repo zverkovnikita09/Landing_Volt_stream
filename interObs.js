@@ -4,9 +4,7 @@ const stepsObserver = new IntersectionObserver(([elem], observer)=>{
             observer.unobserve(elem.target);
         }
     },
-{
-    threshold: 0.5
-});
+{});
 
 const container = document.querySelector('.steps__items');
 const steps = document.querySelectorAll('.stepItem');
@@ -22,7 +20,7 @@ const switch_steps =()=>{
             steps[i+1].classList.add('active');
             i++;
         }
-    },1000);
+    },600);
 }
 
 stepsObserver.observe(container);
