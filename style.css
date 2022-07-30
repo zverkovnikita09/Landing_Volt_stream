@@ -572,7 +572,7 @@ strong{
 .stepItem.visible{
     transform: translateX(0);
     opacity: 1;
-    transition: 0.8s;
+    transition: 0.7s;
 }
 
 /*5 section*/

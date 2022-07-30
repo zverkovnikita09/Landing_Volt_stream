@@ -20,7 +20,7 @@ const switch_steps =()=>{
             steps[i+1].classList.add('active');
             i++;
         }
-    },600);
+    },500);
 }
 
 stepsObserver.observe(container);
